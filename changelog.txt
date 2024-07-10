@@ -1,0 +1,9 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.0.1
+Date: 08. 07. 2024
+  Changes:
+    - Forked version 1.1 https://github.com/dvilker/ViidisGameSpeedButton (MIT License)
+    - Added on_player_created event
+    - Refactoring
+  Fixes:
+    - None
