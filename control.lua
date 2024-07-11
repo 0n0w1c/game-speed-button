@@ -1,12 +1,22 @@
 local mod_gui = require("mod-gui")
 local name = 'game-speed-button'
-local speed_settings = string.gmatch(settings.startup["gsb-speed-settings"].value, '([0-9.]+)')
-
+local speed_settings_under_1 = string.gmatch(settings.startup["gsb-speed-settings-under-1"].value, '([0-9.]+)')
+local speed_settings_over_1 = string.gmatch(settings.startup["gsb-speed-settings-over-1"].value, '([0-9.]+)')
 local speeds = {}
-for speed in speed_settings do
-    local value = tonumber(speed)
-    if value then
-        speeds[#speeds + 1] = value
+
+local function load_speed_settings()
+    for speed in speed_settings_under_1 do
+        local value = tonumber(speed)
+        if value > 0 and value < 1 then
+            speeds[#speeds + 1] = value
+        end
+    end
+    speeds[#speeds + 1] = 1
+    for speed in speed_settings_over_1 do
+        local value = tonumber(speed)
+        if value > 1 and value <= 60 then
+            speeds[#speeds + 1] = value
+        end
     end
 end
 
@@ -48,9 +58,6 @@ local function on_gui_click(event)
                 end
             end
 
-        elseif event.button == defines.mouse_button_type.middle then
-            game.speed = 1
-
         elseif event.button == defines.mouse_button_type.right then
             if game.speed > 1 then
                     game.speed = 1
@@ -67,6 +74,7 @@ local function on_gui_click(event)
     end
 end
 
+load_speed_settings()
 script.on_configuration_changed(update_button)
 script.on_event(defines.events.on_player_created, update_button)
 script.on_event(defines.events.on_gui_click, on_gui_click)
