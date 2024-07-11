@@ -59,7 +59,6 @@ local function on_gui_click(event)
                     end
                 end
             end
-
         elseif event.button == defines.mouse_button_type.right then
             if game.speed > 1 then
                     game.speed = 1
