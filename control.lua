@@ -65,7 +65,7 @@ local function on_gui_click(event)
             else
                 for i = #speeds, 1, -1 do
                     if speeds[i] < game.speed then
-                            game.speed = speeds[i]
+                        game.speed = speeds[i]
                         break
                     end
                 end
