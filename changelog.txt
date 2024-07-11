@@ -1,9 +1,19 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.2
+Date: 10. 07. 2024
+  Changes:
+    - Set the minimum speed to the documented game minimum 0.01
+    - Startup setting speeds can now be blank
+    - Added "in ascending order" to startup setting descriptions
+    - Some wording modifications to readme.md and the previous changelog entry
+  Fixes:
+    - None
+---------------------------------------------------------------------------------------------------
 Version: 0.0.1
 Date: 10. 07. 2024
   Changes:
     - Forked older version 1.1 https://github.com/dvilker/ViidisGameSpeedButton (MIT License)
-    - Added on_player_created event
-    - Significant refactoring
+    - Added an on_player_created event handler
+    - Refactored
   Fixes:
     - None
