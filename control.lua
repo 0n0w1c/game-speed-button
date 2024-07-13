@@ -16,7 +16,7 @@ local function load_speed_settings()
 
     for speed in speed_settings_over_1 do
         local value = tonumber(speed)
-        if value > 1 and value <= 100 then
+        if value > 1 and value <= 60 then
             speeds[#speeds + 1] = value
         end
     end
