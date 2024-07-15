@@ -46,7 +46,7 @@ local function update_button()
     end
 end
 
-local function on_gui_click(event)
+local function button_clicked(event)
     if event.element.name == name then
         if event.button == defines.mouse_button_type.left then
             if game.speed < 1 then
@@ -78,4 +78,4 @@ end
 load_speed_settings()
 script.on_configuration_changed(update_button)
 script.on_event(defines.events.on_player_created, update_button)
-script.on_event(defines.events.on_gui_click, on_gui_click)
+script.on_event(defines.events.on_gui_click, button_clicked)
