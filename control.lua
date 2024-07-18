@@ -1,5 +1,5 @@
 local mod_gui = require("mod-gui")
-local name = 'game-speed-button'
+local name = "game-speed-button"
 local speed_settings_under_1 = string.gmatch(settings.startup["gsb-speed-settings-under-1"].value, '([0-9.]+)')
 local speed_settings_over_1 = string.gmatch(settings.startup["gsb-speed-settings-over-1"].value, '([0-9.]+)')
 local speeds = {}
