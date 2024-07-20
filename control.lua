@@ -39,7 +39,7 @@ local function update_button()
                 type = "button",
                 name = name,
                 caption = caption,
-                tooltip = { "game-speed-button.tt" },
+                tooltip = {"game-speed-button.tt"},
                 style = mod_gui.button_style
             }
         else
@@ -54,9 +54,9 @@ local function button_clicked(event)
             if game.speed < 1 then
                 game.speed = 1
             else
-                for i = 1, #speeds, 1 do
-                    if speeds[i] > game.speed then
-                        game.speed = speeds[i]
+                for index = 1, #speeds, 1 do
+                    if speeds[index] > game.speed then
+                        game.speed = speeds[index]
                         break
                     end
                 end
@@ -65,9 +65,9 @@ local function button_clicked(event)
             if game.speed > 1 then
                     game.speed = 1
             else
-                for i = #speeds, 1, -1 do
-                    if speeds[i] < game.speed then
-                        game.speed = speeds[i]
+                for index = #speeds, 1, -1 do
+                    if speeds[index] < game.speed then
+                        game.speed = speeds[index]
                         break
                     end
                 end
