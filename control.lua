@@ -20,6 +20,8 @@ local function load_speed_settings()
             speeds[#speeds + 1] = value
         end
     end
+
+    table.sort(speeds, function(a, b) return a < b end)
 end
 
 local function update_button()
