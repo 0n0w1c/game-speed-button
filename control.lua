@@ -21,7 +21,9 @@ local function load_speed_settings()
         end
     end
 
-    table.sort(speeds, function(a, b) return a < b end)
+    if #speeds > 1 then
+       table.sort(speeds, function(a, b) return a < b end)
+    end
 end
 
 local function update_button()
