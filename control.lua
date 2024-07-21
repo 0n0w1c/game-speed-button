@@ -53,6 +53,12 @@ local function update_button()
     end
 end
 
+local function runtime_settings_changed()
+    game.speed = 1
+    update_button()
+    load_speed_settings()
+end
+
 local function button_clicked(event)
     if event.element.name == name then
         if event.button == defines.mouse_button_type.left then
@@ -84,6 +90,6 @@ end
 
 load_speed_settings()
 script.on_configuration_changed(update_button)
-script.on_event(defines.events.on_runtime_mod_setting_changed, load_speed_settings)
+script.on_event(defines.events.on_runtime_mod_setting_changed, runtime_settings_changed)
 script.on_event(defines.events.on_player_created, update_button)
 script.on_event(defines.events.on_gui_click, button_clicked)
