@@ -1,7 +1,7 @@
 local mod_gui = require("mod-gui")
 local name = "game-speed-button"
-local speed_settings_under_1 = string.gmatch(settings.startup["gsb-speed-settings-under-1"].value, '([0-9.]+)')
-local speed_settings_over_1 = string.gmatch(settings.startup["gsb-speed-settings-over-1"].value, '([0-9.]+)')
+local speed_settings_under_1 = string.gmatch(settings.global["gsb-speed-settings-under-1"].value, '([0-9.]+)')
+local speed_settings_over_1 = string.gmatch(settings.global["gsb-speed-settings-over-1"].value, '([0-9.]+)')
 local speeds = {}
 
 local function load_speed_settings()
@@ -27,7 +27,7 @@ local function load_speed_settings()
 end
 
 local function update_button()
-    local caption
+    local caption = ""
     if game.speed >= 1 then
         caption = "x " .. tostring(math.floor(game.speed * 100) / 100)
     else
@@ -81,5 +81,6 @@ end
 
 load_speed_settings()
 script.on_configuration_changed(update_button)
+script.on_event(defines.events.on_runtime_mod_setting_changed, update_button)
 script.on_event(defines.events.on_player_created, update_button)
 script.on_event(defines.events.on_gui_click, button_clicked)
