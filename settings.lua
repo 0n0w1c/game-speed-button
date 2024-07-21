@@ -6,7 +6,7 @@ data:extend({
         default_value = ".1 .5",
         allow_blank = true,
         auto_trim = true,
-        order = "a"
+        order = "1"
     },
     {
         type = "string-setting",
@@ -15,6 +15,6 @@ data:extend({
         default_value = "2 5 10 60",
         allow_blank = true,
         auto_trim = true,
-        order = "b"
+        order = "2"
     }
 })
