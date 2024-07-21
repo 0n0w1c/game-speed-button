@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.5
+Date: 20. 07. 2024
+  Changes:
+    - Startup settings moved to run-time settings (Map tab in Mod settings).
+      Button speed settings can now be modified without the need for a game restart.
+  Fixes:
+    - None
+---------------------------------------------------------------------------------------------------
 Version: 0.0.4
 Date: 20. 07. 2024
   Changes:
