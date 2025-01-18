@@ -8,7 +8,7 @@ A no cheating speed-up/slow-down, entire game runs at the selected speed.
 
 Caution: It is a little addicting to use.  
 
-The minimum speed is 0.01 and the maximum is 60, values outside of this range are ignored. A blank list of speeds is valid.  
+The minimum speed is 0.01 and the maximum is 60, values outside of this range are ignored. An empty list of speeds is valid.  
 While 60 is the coded maximum speed, the actual maximum speed may be limited by how fast your computer can run your factory.  
 
 Fork of https://github.com/dvilker/ViidisGameSpeedButton v1.1 (MIT)  
