@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.1
+Date: 18. 1. 2025
+  Changes:
+    - None
+  Bugfixes:
+    - Crash due to incorrectly defined close events for keyboard shortcuts (E and Esc).
+---------------------------------------------------------------------------------------------------
 Version: 0.2.0
 Date: 17. 1. 2025
   Changes:

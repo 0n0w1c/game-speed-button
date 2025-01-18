@@ -254,7 +254,7 @@ end
 local function register_event_handlers()
     script.on_event(defines.events.on_player_created, update_button)
     script.on_event(defines.events.on_gui_click, handle_gui_click)
-    script.on_event({ "close-tile-selector-e", "close-tile-selector-esc" }, handle_close_settings)
+    script.on_event({ "close-gsb-settings-e", "close-gsb-settings-esc" }, handle_close_settings)
 end
 
 script.on_init(function()
