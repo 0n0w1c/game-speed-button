@@ -32,6 +32,9 @@ local function load_speed_settings()
 end
 
 local function update_button()
+    local player = game.get_player(1)
+    if not player then return end
+
     local caption = ""
     if game.speed >= 1 then
         caption = "x " .. tostring(math.floor(game.speed * 100) / 100)
@@ -39,7 +42,6 @@ local function update_button()
         caption = "/ " .. tostring(math.floor(100 / game.speed) / 100)
     end
 
-    local player = game.get_player(1)
     local button_flow = mod_gui.get_button_flow(player)
 
     if not button_flow[name] then

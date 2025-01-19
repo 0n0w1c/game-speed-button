@@ -1,8 +1,15 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.3
+Date: 19. 1. 2025
+  Changes:
+    - None
+  Bugfixes:
+    - Nil check added to prevent crash in update_button, when no player is found
+---------------------------------------------------------------------------------------------------
 Version: 0.2.2
 Date: 18. 1. 2025
   Changes:
-    - Shorten the gui title to allow for a draggable title bar
+    - Shortened the gui title to allow for a draggable title bar
   Bugfixes:
     - None
 ---------------------------------------------------------------------------------------------------
@@ -11,7 +18,7 @@ Date: 18. 1. 2025
   Changes:
     - None
   Bugfixes:
-    - Crash due to incorrectly defined close events for keyboard shortcuts (E and Esc).
+    - Crash due to incorrectly defined close events for keyboard shortcuts (E and Esc)
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.0
 Date: 17. 1. 2025
