@@ -263,7 +263,6 @@ script.on_init(function()
     initialize_globals()
     register_event_handlers()
     load_speed_settings()
-    update_button()
 end)
 
 script.on_load(function()
