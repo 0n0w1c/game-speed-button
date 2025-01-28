@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.4
+Date: 27. 1. 2025
+  Changes:
+    - Added a shortcut to the shortcut bar to toggle the display of the game speed button
+  Bugfixes:
+    - None
+---------------------------------------------------------------------------------------------------
 Version: 0.2.3
 Date: 19. 1. 2025
   Changes:

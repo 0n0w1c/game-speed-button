@@ -4,6 +4,14 @@ local constants = require("constants")
 local name = "game-speed-button"
 local speeds
 
+local function initialize_globals()
+    storage = storage or {}
+
+    storage.gsb_under_1 = storage.gsb_under_1 or constants.default_under_1
+    storage.gsb_over_1 = storage.gsb_over_1 or constants.default_over_1
+    storage.gsb_button_on = storage.gsb_button_on or true
+end
+
 local function load_speed_settings()
     local speed_settings_under_1 = string.gmatch(storage.gsb_under_1, "([0-9.]+)")
     local speed_settings_over_1 = string.gmatch(storage.gsb_over_1, "([0-9.]+)")
@@ -44,18 +52,26 @@ local function update_button()
 
     local button_flow = mod_gui.get_button_flow(player)
 
-    if not button_flow[name] then
-        button_flow.add {
-            type = "button",
-            name = name,
-            caption = caption,
-            tooltip = { "gui.gsb-tool-tip" },
-            style = mod_gui.button_style
-        }
+    if storage.gsb_button_on then
+        if not button_flow[name] then
+            button_flow.add {
+                type = "button",
+                name = name,
+                caption = caption,
+                tooltip = { "gui.gsb-tool-tip" },
+                style = mod_gui.button_style
+            }
+        else
+            button_flow[name].caption = caption
+            button_flow[name].tooltip = { "gui.gsb-tool-tip" }
+        end
     else
-        button_flow[name].caption = caption
-        button_flow[name].tooltip = { "gui.gsb-tool-tip" }
+        if button_flow[name] then
+            button_flow[name].destroy()
+        end
     end
+
+    player.set_shortcut_toggled("gsb-toggle-button", storage.gsb_button_on)
 end
 
 local function create_settings_gui(player)
@@ -246,14 +262,15 @@ local function handle_close_settings(event)
     end
 end
 
-local function initialize_globals()
-    storage = storage or {}
+local function on_shortcut_clicked(event)
+    if (not event) or (not event.prototype_name) or (event.prototype_name ~= "gsb-toggle-button") then return end
 
-    storage.gsb_under_1 = storage.gsb_under_1 or constants.default_under_1
-    storage.gsb_over_1 = storage.gsb_over_1 or constants.default_over_1
+    storage.gsb_button_on = not storage.gsb_button_on
+    update_button()
 end
 
 local function register_event_handlers()
+    script.on_event(defines.events.on_lua_shortcut, on_shortcut_clicked)
     script.on_event(defines.events.on_player_created, update_button)
     script.on_event(defines.events.on_gui_click, handle_gui_click)
     script.on_event({ "close-gsb-settings-e", "close-gsb-settings-esc" }, handle_close_settings)

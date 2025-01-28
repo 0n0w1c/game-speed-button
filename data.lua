@@ -15,5 +15,18 @@ data.extend({
         type = "custom-input",
         name = "close-gsb-settings-esc",
         key_sequence = "ESCAPE"
+    },
+    {
+        type = "shortcut",
+        name = "gsb-toggle-button",
+        action = "lua",
+        icon = "__game-speed-button__/graphics/icons/x1.png",
+        icon_size = 64,
+        small_icon = "__game-speed-button__/graphics/icons/x1-24.png",
+        small_icon_size = 24,
+        associated_control_input = "give-gsb-toggle-button",
+        style = "default",
+        toggleable = true,
+        order = "gsb"
     }
 })
