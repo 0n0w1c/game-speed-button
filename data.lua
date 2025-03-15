@@ -22,13 +22,11 @@ data.extend({
         type = "custom-input",
         name = "gsb-close-settings-e",
         key_sequence = "E",
-        consuming = "none"
     },
     {
         type = "custom-input",
         name = "gsb-close-settings-esc",
         key_sequence = "ESCAPE",
-        consuming = "none"
     },
     {
         type = "shortcut",
