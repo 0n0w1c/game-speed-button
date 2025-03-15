@@ -1,48 +1,55 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.5
+Date: 14.03.2025
+  Changes:
+    - Added keyboard shortcuts "Ctrl +" and "Ctrl -" to increase and decrease game speed
+  Bugfixes:
+    - None
+---------------------------------------------------------------------------------------------------
 Version: 0.2.4
-Date: 27. 1. 2025
+Date: 27.01.2025
   Changes:
     - Added a shortcut to the shortcut bar to toggle the display of the game speed button
   Bugfixes:
     - None
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.3
-Date: 19. 1. 2025
+Date: 19.01.2025
   Changes:
     - None
   Bugfixes:
     - Nil check added to prevent crash in update_button, when no player is found
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.2
-Date: 18. 1. 2025
+Date: 18.01.2025
   Changes:
     - Shortened the gui title to allow for a draggable title bar
   Bugfixes:
     - None
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.1
-Date: 18. 1. 2025
+Date: 18.01.2025
   Changes:
     - None
   Bugfixes:
     - Crash due to incorrectly defined close events for keyboard shortcuts (E and Esc)
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.0
-Date: 17. 1. 2025
+Date: 17.01.2025
   Changes:
     - Runtime settings moved in-game, access via [Ctrl] + Left click
   Bugfixes:
     - None
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.0
-Date: 21. 10. 2024
+Date: 21.10.2024
   Changes:
     - Updated for Facorio 2.0
   Bugfixes:
     - None
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.5
-Date: 20. 07. 2024
+Date: 20.07.2024
   Changes:
     - Startup settings moved to run-time settings (Map tab in Mod settings).
       Button speed settings can now be modified without the need for a game restart.
@@ -50,21 +57,21 @@ Date: 20. 07. 2024
     - None
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.4
-Date: 20. 07. 2024
+Date: 20.07.2024
   Changes:
     - Startup setting speeds no longer required to be in ascending order
   Bugfixes:
     - None
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.3
-Date: 12. 07. 2024
+Date: 12.07.2024
   Changes:
     - None
   Bugfixes:
     - Set max speed to 60
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.2
-Date: 10. 07. 2024
+Date: 10.07.2024
   Changes:
     - Set the minimum speed to the documented game minimum 0.01
     - Startup setting speeds can now be blank
@@ -74,7 +81,7 @@ Date: 10. 07. 2024
     - None
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.1
-Date: 10. 07. 2024
+Date: 10.07.2024
   Changes:
     - Forked older version 1.1 https://github.com/dvilker/ViidisGameSpeedButton (MIT License)
     - Added an on_player_created event handler

@@ -194,6 +194,34 @@ local function create_settings_gui(player)
     return frame
 end
 
+local function increase_game_speed()
+    if game.speed < 1 then
+        game.speed = 1
+    else
+        for index = 1, #speeds do
+            if speeds[index] > game.speed then
+                game.speed = speeds[index]
+                break
+            end
+        end
+    end
+    update_button()
+end
+
+local function decrease_game_speed()
+    if game.speed > 1 then
+        game.speed = 1
+    else
+        for index = #speeds, 1, -1 do
+            if speeds[index] < game.speed then
+                game.speed = speeds[index]
+                break
+            end
+        end
+    end
+    update_button()
+end
+
 local function handle_gui_click(event)
     local player = game.get_player(event.player_index)
     if not player or not event.element or not event.element.valid then return end
@@ -205,30 +233,10 @@ local function handle_gui_click(event)
             if event.control then
                 create_settings_gui(player)
             else
-                if game.speed < 1 then
-                    game.speed = 1
-                else
-                    for index = 1, #speeds do
-                        if speeds[index] > game.speed then
-                            game.speed = speeds[index]
-                            break
-                        end
-                    end
-                end
-                update_button()
+                increase_game_speed()
             end
         elseif event.button == defines.mouse_button_type.right then
-            if game.speed > 1 then
-                game.speed = 1
-            else
-                for index = #speeds, 1, -1 do
-                    if speeds[index] < game.speed then
-                        game.speed = speeds[index]
-                        break
-                    end
-                end
-            end
-            update_button()
+            decrease_game_speed()
         end
     elseif element.name == "gsb_save_button" then
         local under_1_textfield =
@@ -269,11 +277,27 @@ local function on_shortcut_clicked(event)
     update_button()
 end
 
+local function on_gsb_increase(event)
+    local player = game.get_player(event.player_index)
+    if player then
+        increase_game_speed()
+    end
+end
+
+local function on_gsb_decrease(event)
+    local player = game.get_player(event.player_index)
+    if player then
+        decrease_game_speed()
+    end
+end
+
 local function register_event_handlers()
     script.on_event(defines.events.on_lua_shortcut, on_shortcut_clicked)
     script.on_event(defines.events.on_player_created, update_button)
     script.on_event(defines.events.on_gui_click, handle_gui_click)
-    script.on_event({ "close-gsb-settings-e", "close-gsb-settings-esc" }, handle_close_settings)
+    script.on_event({ "gsb-close-settings-e", "gsb-close-settings-esc" }, handle_close_settings)
+    script.on_event("gsb-increase", on_gsb_increase)
+    script.on_event("gsb-decrease", on_gsb_decrease)
 end
 
 script.on_init(function()

@@ -8,13 +8,27 @@ data.raw["gui-style"].default["bold_textbox"] = {
 data.extend({
     {
         type = "custom-input",
-        name = "close-gsb-settings-e",
-        key_sequence = "E"
+        name = "gsb-increase",
+        key_sequence = "CONTROL + EQUALS",
+        consuming = "none"
     },
     {
         type = "custom-input",
-        name = "close-gsb-settings-esc",
-        key_sequence = "ESCAPE"
+        name = "gsb-decrease",
+        key_sequence = "CONTROL + MINUS",
+        consuming = "none"
+    },
+    {
+        type = "custom-input",
+        name = "gsb-close-settings-e",
+        key_sequence = "E",
+        consuming = "none"
+    },
+    {
+        type = "custom-input",
+        name = "gsb-close-settings-esc",
+        key_sequence = "ESCAPE",
+        consuming = "none"
     },
     {
         type = "shortcut",
