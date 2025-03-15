@@ -10,23 +10,11 @@ data.extend({
         type = "custom-input",
         name = "gsb-increase",
         key_sequence = "CONTROL + EQUALS",
-        consuming = "none"
     },
     {
         type = "custom-input",
         name = "gsb-decrease",
         key_sequence = "CONTROL + MINUS",
-        consuming = "none"
-    },
-    {
-        type = "custom-input",
-        name = "gsb-close-settings-e",
-        key_sequence = "E",
-    },
-    {
-        type = "custom-input",
-        name = "gsb-close-settings-esc",
-        key_sequence = "ESCAPE",
     },
     {
         type = "shortcut",

@@ -260,7 +260,7 @@ local function handle_gui_click(event)
     end
 end
 
-local function handle_close_settings(event)
+local function handle_gui_closed(event)
     local player = game.get_player(event.player_index)
     if not player then return end
 
@@ -292,10 +292,10 @@ local function on_gsb_decrease(event)
 end
 
 local function register_event_handlers()
-    script.on_event(defines.events.on_lua_shortcut, on_shortcut_clicked)
     script.on_event(defines.events.on_player_created, update_button)
+    script.on_event(defines.events.on_lua_shortcut, on_shortcut_clicked)
     script.on_event(defines.events.on_gui_click, handle_gui_click)
-    script.on_event({ "gsb-close-settings-e", "gsb-close-settings-esc" }, handle_close_settings)
+    script.on_event(defines.events.on_gui_closed, handle_gui_closed)
     script.on_event("gsb-increase", on_gsb_increase)
     script.on_event("gsb-decrease", on_gsb_decrease)
 end
